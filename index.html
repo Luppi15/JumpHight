@@ -14,16 +14,20 @@
         <div class="card">
             <div class="header">Jump Hight</div>
             <div class="info">
-                <p class="title">Treino de Impulsão Misto – Academia + Corpo Livre</p>
+                <p class="title">Treino de impulsão do Luppi</p>
                 <div id="treino-container">
                     <div class="treino">
                         <strong>Aquecimento</strong>
                         <ul>
-                            <li>3 min de corda ou bike</li>
-                            <li>2x50 polichinelos</li>
+                            <li>3 min de corda</li>
                             <li>Mobilidade de tornozelos, quadril e joelhos</li>
-                            <li>Alongamento leve (como o Gabriel indicou)</li>
+                            <li>Alongamento leve</li>
                         </ul>
+                        <strong>Caso nao consiga fazer corda</strong>
+                        <ul>
+                            <li>4x50 polichinelo</li>
+                        </ul>
+
                     </div>
                     <div class="treino" style="display: none;">
                         <strong>Agachamento Livre (barra)</strong>
@@ -32,31 +36,34 @@
                             <li>Carga moderada/pesada</li>
                             <li>Subida explosiva</li>
                         </ul>
-                        <p>+ Superset com:</p>
-                        <ul>
-                            <li><strong>Agachamento com Salto (sem peso)</strong></li>
-                            <li>3x10 repetições</li>
-                        </ul>
                     </div>
                     <div class="treino" style="display: none;">
-                        <strong>Leg Press</strong>
+                        <strong>saltos horizontais (com carga)</strong>
                         <ul>
-                            <li>3x10 repetições</li>
-                            <li>Subida com força, descida controlada</li>
-                        </ul>
-                    </div>
-                    <div class="treino" style="display: none;">
-                        <strong>Pulos Longos (saltos horizontais)</strong>
-                        <ul>
-                            <li>4x30 repetições</li>
+                            <li>4x15 repetições</li>
+                            <li>pule para frente</li>
                             <li>Pode fazer em série contínua com pequenos passos entre um salto e outro</li>
                         </ul>
+                        <strong>Superset abdominal com carga</strong>
+                        <ul>
+                            <li>4x20 abdominal comum com carga</li>
+                            <li>Faça esse exercicio logo apos os saltos, apos terminalo descanse 1 min e volte a saltar.
+                            </li>
+                        </ul>
                     </div>
                     <div class="treino" style="display: none;">
-                        <strong>Afundo (com halteres ou barra)</strong>
+                        <strong>Afundo (com carga)</strong>
                         <ul>
                             <li>4x10 (alternando as pernas)</li>
-                            <li>Se quiser seguir o Gabriel: 4x80, mas comece com bem menos (ex: 4x20) e vá subindo</li>
+                            <li>use halteres ou barra</li>
+                            <li>faça o afundo parado, pule apenas verticalmente</li>
+                            <li>troque de perna no meio do salto</li>
+                        </ul>
+                        <strong>Superset abdominal invertido</strong>
+                        <ul>
+                            <li>4x30 abdominal invertido</li>
+                            <li>Faça esse exercicio logo apos o afundo, apos terminalo descanse 1 min e volte ao afundo.
+                            </li>
                         </ul>
                     </div>
                     <div class="treino" style="display: none;">
@@ -66,19 +73,20 @@
                             <li>Altura moderada</li>
                             <li>Desça com controle</li>
                         </ul>
-                    </div>
-                    <div class="treino" style="display: none;">
-                        <strong>Panturrilha (na Leg Press ou em pé)</strong>
+                        <strong>Superset abdominal canivete cruzado</strong>
                         <ul>
-                            <li>4x60 repetições</li>
-                            <li>Pode fazer com peso corporal ou com carga na máquina</li>
-                            <li>Subida máxima, descida lenta</li>
+                            <li>4x25 abdominal canivete cruzado</li>
+                            <li>ou caso nao consiga abdominal bicicleta cruzado</li>
+                            <li>Faça esse exercicio logo apos o salto em caixa, apos terminalo descanse 1 min e volte
+                                aos saltos.</li>
                         </ul>
                     </div>
                     <div class="treino" style="display: none;">
-                        <strong>Abdominal Invertido</strong>
+                        <strong>Panturrilha (com carga ou em pé)</strong>
                         <ul>
-                            <li>4x30 repetições (como no treino do Gabriel)</li>
+                            <li>4x30 com carga</li>
+                            <li>ou 4x60 com peso corporal</li>
+                            <li>Subida máxima, descida lenta</li>
                         </ul>
                     </div>
                     <div class="treino" style="display: none;">
@@ -86,15 +94,6 @@
                         <ul>
                             <li>5 minutos seguidos (ou em blocos de 1 min com pausa curta)</li>
                             <li>Pode usar cronômetro e manter o ritmo</li>
-                        </ul>
-                    </div>
-                    <div class="treino" style="display: none;">
-                        <strong>Defesa com “Metralhadora” (posição de base)</strong>
-                        <ul>
-                            <li>Agacha como se estivesse marcando no basquete e simula o movimento de defesa lateral com
-                                braços ativos</li>
-                            <li>Fica até falhar</li>
-                            <li>2 a 3 rounds</li>
                         </ul>
                     </div>
                     <div class="treino" style="display: none;">
@@ -108,7 +107,7 @@
 
             </div>
             <div class="footer">
-                <p class="tag">#LUPPI </p>
+                <button type="button" class="action" onclick="mostrarAnterior()">Anterior</button>
                 <button type="button" class="action" onclick="mostrarProximo()">Próximo</button>
             </div>
 
@@ -124,7 +123,15 @@
             treinoAtual = (treinoAtual + 1) % treinos.length; // Vai para o próximo treino
             treinos[treinoAtual].style.display = 'block'; // Mostra o próximo treino
         }
+
+        function mostrarAnterior() {
+            treinos[treinoAtual].style.display = 'none'; // Esconde o treino atual
+            treinoAtual = (treinoAtual - 1 + treinos.length) % treinos.length; // Vai para o treino anterior
+            treinos[treinoAtual].style.display = 'block'; // Mostra o treino anterior
+        }
     </script>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
